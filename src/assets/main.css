@@ -1,35 +1,98 @@
 @import './base.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+.game-info {
+  margin-top: 10px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.game-info div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.game-info svg {
+  height: 25px;
+  margin-left: 10px;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.game-info button {
+  margin-left: 15px;
+}
+
+.table {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 300px;
+  margin-top: 50px;
+}
+
+.table .field {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+
+  border: 6px solid #000;
+  box-sizing: border-box;
+}
+
+.table .field:nth-child(1),
+.table .field:nth-child(2),
+.table .field:nth-child(3) {
+  border-top-color: transparent;
+}
+
+.table .field:nth-child(1),
+.table .field:nth-child(4),
+.table .field:nth-child(7) {
+  border-left-color: transparent;
+}
+
+.table .field:nth-child(3),
+.table .field:nth-child(6),
+.table .field:nth-child(9) {
+  border-right-color: transparent;
+}
+
+.table .field:nth-child(7),
+.table .field:nth-child(8),
+.table .field:nth-child(9) {
+  border-bottom-color: transparent;
+}
+
+.victory-score {
+  margin-top: 50px;
+}
+
+.victory-score,
+.victory-score div {
+  display: flex;
+  align-items: center;
+}
+
+.victory-score p {
+  margin-right: 25px;
+}
+
+.victory-score div svg {
+  height: 25px;
+  margin-right: 10px;
+}
+
+.victory-score div {
+  padding: 5px;
+  border: 3px solid #000;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.victory-score div:first-of-type {
+  margin-right: 10px;
 }
