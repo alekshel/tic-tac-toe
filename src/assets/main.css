@@ -1,14 +1,30 @@
 @import './base.css';
 
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  width: 500px;
+}
+
+main header {
+  text-align: center;
 }
 
 .game-info {
   margin-top: 10px;
+}
+
+.game-info p {
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .game-info div {
@@ -23,10 +39,20 @@ main {
 }
 
 .game-info button {
+  padding: 5px 10px;
   margin-left: 15px;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: #01bdf6;
+
+  border: 3px solid #01bdf6;
+  border-radius: 4px;
+  background: transparent;
 }
 
 .table {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
 
@@ -35,50 +61,87 @@ main {
 }
 
 .table .field {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100px;
   height: 100px;
-  padding: 10px;
-
-  border: 6px solid #000;
+  padding: 6px;
   box-sizing: border-box;
+
+  transition: all .3s ease-out;
 }
 
-.table .field:nth-child(1),
-.table .field:nth-child(2),
-.table .field:nth-child(3) {
-  border-top-color: transparent;
+.table .field:hover:empty {
+  border-radius: 6px;
+  background: var(--field-hover-color);
+  cursor: pointer;
 }
 
-.table .field:nth-child(1),
-.table .field:nth-child(4),
-.table .field:nth-child(7) {
-  border-left-color: transparent;
+.table .field svg {
+  height: 80%;
 }
 
-.table .field:nth-child(3),
-.table .field:nth-child(6),
-.table .field:nth-child(9) {
-  border-right-color: transparent;
+.table .line {
+  position: absolute;
+  z-index: 2;
+
+  border-radius: 6px;
+  background: var(--line-color);
 }
 
-.table .field:nth-child(7),
-.table .field:nth-child(8),
-.table .field:nth-child(9) {
-  border-bottom-color: transparent;
+.table .line:nth-child(1),
+.table .line:nth-child(2) {
+  width: 12px;
+  height: 100%;
+}
+
+.table .line:nth-child(3),
+.table .line:nth-child(4) {
+  width: 100%;
+  height: 12px;
+}
+
+.table .line:nth-child(1) {
+  left: 94px;
+}
+
+.table .line:nth-child(2) {
+  left: 194px;
+}
+
+.table .line:nth-child(3) {
+  top: 94px;
+}
+
+.table .line:nth-child(4) {
+  top: 194px;
 }
 
 .victory-score {
+  display: flex;
+  flex-direction: column;
   margin-top: 50px;
 }
 
+.victory-score > div {
+  display: flex;
+}
+
 .victory-score,
-.victory-score div {
+.victory-score > div > div {
   display: flex;
   align-items: center;
 }
 
 .victory-score p {
-  margin-right: 25px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .victory-score div svg {
@@ -86,13 +149,22 @@ main {
   margin-right: 10px;
 }
 
-.victory-score div {
-  padding: 5px;
-  border: 3px solid #000;
+.victory-score > div > div {
+  padding: 5px 10px;
+  
+  font-size: 16px;
+  font-weight: bold !important;
+
+  border: 3px solid;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
-.victory-score div:first-of-type {
+.victory-score > div > div:first-of-type {
   margin-right: 10px;
+  border-color: #01bdf6;
+}
+
+.victory-score > div > div:last-of-type {
+  border-color: #f72a39;
 }

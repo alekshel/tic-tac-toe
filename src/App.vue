@@ -17,6 +17,11 @@
         </header>
 
         <section class="table">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+
             <div 
                 class="field"
                 v-for="field, key in fields"
@@ -30,13 +35,16 @@
 
         <section class="victory-score">
             <p>Рахунок</p>
+            
             <div>
-                <XPlayerIcon/>
-                <span>{{ players[0].winsCount }}</span>
-            </div>
-            <div>
-                <OPlayerIcon/>
-                <span>{{ players[1].winsCount }}</span>
+                <div>
+                    <XPlayerIcon/>
+                    <span>{{ players[0].winsCount }}</span>
+                </div>
+                <div>
+                    <OPlayerIcon/>
+                    <span>{{ players[1].winsCount }}</span>
+                </div>
             </div>
         </section>
     </main>
@@ -159,6 +167,10 @@
                 return this.fields.filter(
                     item => item == ""
                 ).length == 0
+            },
+
+            setTheme(theme) {
+                document.documentElement.className = theme
             }
         },
 
@@ -168,6 +180,7 @@
         },
 
         created() {
+            this.setTheme("light")
             this.tempPlayers = [this.players[0].name, this.players[1].name]
         }
     }
