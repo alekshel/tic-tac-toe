@@ -152,6 +152,7 @@
                 })
 
                 this.gameOver = false
+                this.tie = false
             },
 
             isTie() {
