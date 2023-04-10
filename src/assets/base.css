@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
+  --const-blue: #01bdf6;
+  --const-red: #f72a39;
+
   --const-white: #ffffff;
   --const-hover-white: #eeeeee;
   --const-grey: #f8f8f8;
@@ -37,10 +40,13 @@
   position: relative;
 }
 
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
   height: 100%;
   color: var(--text-color);
   font-weight: 400;
-  font-family: 'Roboto', sans-serif;
   background: var(--color-background);
 }

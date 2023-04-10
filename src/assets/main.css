@@ -44,9 +44,9 @@ main header {
 
   font-size: 14px;
   font-weight: bold;
-  color: #01bdf6;
+  color: var(--const-blue);
 
-  border: 3px solid #01bdf6;
+  border: 3px solid var(--const-blue);
   border-radius: 4px;
   background: transparent;
 }
@@ -162,9 +162,9 @@ main header {
 
 .victory-score > div > div:first-of-type {
   margin-right: 10px;
-  border-color: #01bdf6;
+  border-color: var(--const-blue);
 }
 
 .victory-score > div > div:last-of-type {
-  border-color: #f72a39;
+  border-color: var(--const-red);
 }
