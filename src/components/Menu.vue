@@ -1,19 +1,27 @@
 <template>
     <menu>
-        <button>Почати гру</button>
+        <button>{{ $t("menu.gameStart") }}</button>
+
+        <Languages/>
+
         <div>
-            <span :className="theme != 'light' ? 'opacity' : ''">Світла</span>
+            <span :className="theme != 'light' ? 'opacity' : ''">
+                {{ $t("menu.lightTheme") }}
+            </span>
             <Switcher 
                 :checked="theme == 'light' ? false : true"
                 @onChange="value => changeTheme(value.checked)"
             />
-            <span :className="theme != 'dark' ? 'opacity' : ''">Темна</span>
+            <span :className="theme != 'dark' ? 'opacity' : ''">
+                {{ $t("menu.darkTheme") }}
+            </span>
         </div>
     </menu>
 </template>
 
 <script>
     import Switcher from "./Switcher.vue"
+    import Languages from "./Languages.vue"
 
     export default { 
         name: "Menu",
@@ -31,8 +39,9 @@
         },
 
         components: {
-            Switcher
-        },
+            Switcher,
+            Languages
+        }
     }
 </script>
 
