@@ -18,6 +18,7 @@
   --text-color: var(--const-black);
   --color-background: var(--const-white);
   --line-color: var(--const-black);
+  --switcher-bg: var(--const-prime-black);
 
   --field-hover-color: var(--const-hover-white);
 }
@@ -27,6 +28,7 @@
     --text-color: var(--const-white);
     --color-background: var(--const-prime-black);
     --line-color: var(--const-white);
+    --switcher-bg: var(--const-white);
 
     --field-hover-color: var(--const-hover-black);
   }

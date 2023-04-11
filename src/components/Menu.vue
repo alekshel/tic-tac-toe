@@ -1,10 +1,14 @@
 <template>
     <menu>
         <button>Почати гру</button>
-        <Switcher 
-            :checked="theme == 'light' ? false : true"
-            @onChange="value => changeTheme(value.checked)"
-        />
+        <div>
+            <span :className="theme != 'light' ? 'opacity' : ''">Світла</span>
+            <Switcher 
+                :checked="theme == 'light' ? false : true"
+                @onChange="value => changeTheme(value.checked)"
+            />
+            <span :className="theme != 'dark' ? 'opacity' : ''">Темна</span>
+        </div>
     </menu>
 </template>
 
@@ -68,6 +72,22 @@
     }
 
     menu div {
-        width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    menu div label {
+        margin: 0 10px;
+    }
+
+    menu div span {
+        color: var(--text-color);
+        font-weight: bold;
+        transition: all .3s ease-out;
+    }
+
+    menu div span.opacity {
+        opacity: .5;
     }
 </style>

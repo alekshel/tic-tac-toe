@@ -38,6 +38,7 @@
             },
 
             setTheme(theme) {
+                this.theme = theme
                 document.documentElement.className = theme
             }
         },
