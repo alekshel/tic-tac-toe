@@ -1,10 +1,15 @@
 <template>
     <main>
         <Menu 
+            v-show="!gameStart"
             :theme="theme"
             :setTheme="setTheme"
+            @chageMode="changeMenuMode"
         />
-        <Game v-if="gameStart == true"/>
+        <Game 
+            v-show="gameStart"
+            :showMenu="changeMenuMode"
+        />
     </main>
 </template>
 
@@ -21,6 +26,10 @@
         },
 
         methods: {
+            changeMenuMode() {
+                this.gameStart = !this.gameStart
+            },
+            
             setValue({fieldName, fieldValue}) {
                 if (fieldName.includes(".")) {
                     let field = this

@@ -1,6 +1,8 @@
 <template>
     <menu>
-        <button>{{ $t("menu.gameStart") }}</button>
+        <button
+            @click="$emit('chageMode')"
+        >{{ $t("menu.gameStart") }}</button>
 
         <Languages/>
 

@@ -1,11 +1,12 @@
 <template>
-    <div>
+    <div class="game">
         <Header
             :players="players"
             :tempPlayers="tempPlayers"
             :fields="fields"
             :gameOver="gameOver"
             :tie="tie"
+            :showMenu="showMenu"
             @setValue="setValue"
         />
 
@@ -29,7 +30,9 @@
     import Header from "./Header.vue"
     import VictoryScore from "./VictoryScore.vue"
 
-    export default { 
+    export default {
+        props: ["showMenu"],
+
         data() {
             return {
                 gameOver: false,
@@ -85,3 +88,11 @@
         }
     }
 </script>
+
+<style scoped>
+    .game {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>

@@ -71,6 +71,7 @@
         padding: 5px 10px;
         border: 0;
         border-radius: 4px;
+        color: var(--text-color-reverse);
         background: var(--text-color);
         
         transition: all .3s ease-out;

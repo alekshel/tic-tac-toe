@@ -1,6 +1,16 @@
 <template>
     <header>
-        <h1>Хрестики нолики</h1>
+        <div class="header-line">
+            <button 
+                class="back-to-menu"
+                @click="showMenu"
+            >   
+                <Back/>
+                <span>Меню</span>
+            </button>
+            <h1>Хрестики нолики</h1>
+        </div>
+
         <section class="game-info">
             <div v-if="!gameOver">
                 <p>Хід гравця: </p>
@@ -16,11 +26,12 @@
 </template>
 
 <script>
+    import Back from "./icons/Back.vue"
     import XPlayerIcon from "./icons/PlayerX.vue"
     import OPlayerIcon from "./icons/PlayerO.vue"
 
     export default {
-        props: ["tempPlayers", "players", "fields", "gameOver", "tie"],
+        props: ["showMenu", "tempPlayers", "players", "fields", "gameOver", "tie"],
 
         methods: {
             gameEndText(player) {
@@ -56,8 +67,40 @@
         },
 
         components: {
+            Back,
             XPlayerIcon,
             OPlayerIcon
         },
     }
 </script>
+
+<style scoped>
+    .header-line {
+        display: flex;
+        align-items: center;
+    }
+
+    .back-to-menu {
+        display: flex;
+        align-items: center;
+        padding: 3px 6px;
+        margin-right: 20px;
+        
+        border: 0;
+        border-radius: 4px;
+
+        color: var(--text-color-reverse) !important;
+        background: var(--color-background-reverse);
+
+        transition: all .3s ease-out;
+        cursor: pointer;
+    }
+
+    .back-to-menu:hover {
+        opacity: .8;
+    }
+
+    .back-to-menu svg {
+        width: 15px;
+    }
+</style>

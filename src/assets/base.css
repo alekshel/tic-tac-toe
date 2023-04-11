@@ -16,7 +16,11 @@
 /* semantic color variables for this project */
 :root.light {
   --text-color: var(--const-black);
+  --text-color-reverse: var(--const-white);
+
   --color-background: var(--const-white);
+  --color-background-reverse: var(--const-prime-black);
+
   --line-color: var(--const-black);
   --switcher-bg: var(--const-prime-black);
 
@@ -26,7 +30,11 @@
 /* @media (prefers-color-scheme: dark) { */
   :root.dark {
     --text-color: var(--const-white);
+    --text-color-reverse: var(--const-prime-black);
+
     --color-background: var(--const-prime-black);
+    --color-background-reverse: var(--const-white);
+
     --line-color: var(--const-white);
     --switcher-bg: var(--const-white);
 

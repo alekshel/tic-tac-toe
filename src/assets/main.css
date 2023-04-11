@@ -49,6 +49,14 @@ main header {
   border: 3px solid var(--const-blue);
   border-radius: 4px;
   background: transparent;
+
+  transition: all .3s ease-out;
+  cursor: pointer;
+}
+
+.game-info button:hover {
+  color: var(--const-white);
+  background: var(--const-blue);
 }
 
 .table {
