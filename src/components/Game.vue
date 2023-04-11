@@ -38,6 +38,7 @@
                 gameOver: false,
                 tie: false,
 
+                tempPlayers: [],
                 players: [
                     {
                         name: "X",
