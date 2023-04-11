@@ -1,6 +1,6 @@
 <template>
     <section class="victory-score">
-        <p>Рахунок</p>
+        <p>{{ $t("game.victoryScore.title") }}</p>
         
         <div>
             <div>

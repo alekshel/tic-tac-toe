@@ -6,20 +6,20 @@
                 @click="showMenu"
             >   
                 <Back/>
-                <span>Меню</span>
+                <span>{{ $t("game.header.menu") }}</span>
             </button>
-            <h1>Хрестики нолики</h1>
+            <h1>{{ $t("game.header.ticTacToe") }}</h1>
         </div>
 
         <section class="game-info">
             <div v-if="!gameOver">
-                <p>Хід гравця: </p>
+                <p>{{ $t("game.header.playersTurn") }}</p>
                 <XPlayerIcon v-if="tempPlayers[0] == players[0].name"/>
                 <OPlayerIcon v-if="tempPlayers[0] == players[1].name"/>
             </div>
             <div v-else>
                 <p>{{ this.gameEndText(this.tempPlayers[0]) }}</p>
-                <button @click="gameRestart">Перезавантажити</button>
+                <button @click="gameRestart">{{ $t("game.header.restart") }}</button>
             </div>
         </section> 
     </header>
@@ -36,8 +36,8 @@
         methods: {
             gameEndText(player) {
                 return this.tie
-                    ? "Нічия! Спробуйте ще раз"
-                    : "Перемога за гравцем: " + player
+                    ? this.$t("game.header.tieMess")
+                    : this.$t("game.header.winMess") + " " + player
             },
 
             gameRestart() {
