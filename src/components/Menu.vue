@@ -2,7 +2,7 @@
     <menu>
         <button>Почати гру</button>
         <Switcher 
-            :defValue="theme"
+            :checked="theme == 'light' ? false : true"
             @onChange="value => changeTheme(value.checked)"
         />
     </menu>
@@ -12,15 +12,17 @@
     import Switcher from "./Switcher.vue"
 
     export default { 
+        name: "Menu",
         props: ["theme", "setTheme"],
 
         methods: {
             changeTheme(value) {
-                if (value) {
-                    this.setTheme("dark")
-                    return
-                }
-                this.setTheme("light")
+                let theme = value
+                    ? "dark"
+                    : "light"
+
+                localStorage.setItem("theme", theme)
+                this.setTheme(theme)
             }
         },
 

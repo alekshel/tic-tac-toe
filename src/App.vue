@@ -48,6 +48,14 @@
         },
 
         created() {
+            if (window?.matchMedia('(prefers-color-scheme: dark)').matches) {
+                this.theme = "dark"
+            }
+
+            if (localStorage.getItem("theme")) {
+                this.theme = localStorage.getItem("theme")
+            }
+
             this.setTheme(this.theme)
         }
     }

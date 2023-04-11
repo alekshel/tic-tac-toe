@@ -2,7 +2,7 @@
     <label class="switch">
         <input 
             type="checkbox"
-            :value="defValue == 'light' ? false : true"
+            :checked="checked"
             @change="event => this.$emit('onChange', event.target)"
         >
         <span class="slider round"></span>
@@ -11,7 +11,7 @@
 
 <script>
     export default { 
-        props: ["defValue"],
+        props: ["checked"]
     }
 </script>
 
